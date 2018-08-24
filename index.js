@@ -4,11 +4,28 @@ const TelegramBot = require('node-telegram-bot-api')
 const botToken = '669342127:AAFExLVizilRvdZt5O01Ut3KQIns6Q41hkw'
 const mockBot = new TelegramBot(botToken, {polling: true});
 
-mockBot.onText(/\/(mock|auti) (.+)/, (msg, match) => {
-    const chatId = msg.chat.id
-    const text = msg.text.substring(5)
-    const mockedText = text
-        .map((val, i) => i % 2 ? val.toUpperCase() : val)
-        .join(',')
+const mockifyText = text => text
+    .split('')
+    .map((val, i) => i % 2 ? val : val.toUpperCase())
+    .join('')
+
+mockBot.onText(/\/(mock|auti) (.+)/, ({ text, chat: { id: chatId }}) => {
+    const mockedText = mockifyText(text.substring(6))
     mockBot.sendMessage(chatId, mockedText)
 })
+
+mockBot.on('inline_query', e => {
+    const mockedText = mockifyText(e.query) || ' '
+    const answer = [{
+        type: 'article',
+        id: '1',
+        title: 'MoCkIfIeD tExT',
+        input_message_content: {
+            message_text: mockedText,
+            parse_mode: 'Markdown'
+        }
+    }]
+    mockBot.answerInlineQuery(e.id, answer)
+})
+
+mockBot.on('polling_error', err => { console.log(err) })
