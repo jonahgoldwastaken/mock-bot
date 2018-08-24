@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "node .",
-    "dev": "nodemon ."
+    "dev": "nodemon dev.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "node-telegram-bot-api": "^0.30.0"
   },
   "devDependencies": {
+    "dotenv": "^6.0.0",
     "nodemon": "^1.18.3"
   }
 }

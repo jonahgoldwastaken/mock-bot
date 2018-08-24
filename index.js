@@ -15,7 +15,7 @@ mockBot.onText(/\/(mock|auti) (.+)/, ({ text, chat: { id: chatId }}) => {
 })
 
 mockBot.on('inline_query', e => {
-    const mockedText = mockifyText(e.query) || ' '
+    const mockedText = mockifyText(e.query) || 'Type something!'
     const answer = [{
         type: 'article',
         id: '1',
@@ -23,7 +23,8 @@ mockBot.on('inline_query', e => {
         input_message_content: {
             message_text: mockedText,
             parse_mode: 'Markdown'
-        }
+        },
+        description: mockedText
     }]
     mockBot.answerInlineQuery(e.id, answer)
 })
