@@ -1,0 +1,24 @@
+{
+  "name": "mock-bot",
+  "version": "1.0.0",
+  "description": "TeLeGrAm BoT tO mOcK pEoPlE wItH",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theonejonahgold/mock-bot.git"
+  },
+  "keywords": [],
+  "author": "Jonah Meijers <jonahmeijers97@gmail.com> (https://www.jonahmeijers.nl/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theonejonahgold/mock-bot/issues"
+  },
+  "homepage": "https://github.com/theonejonahgold/mock-bot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
