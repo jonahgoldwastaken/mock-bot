@@ -13,6 +13,9 @@
     "url": "git+https://github.com/theonejonahgold/mock-bot.git"
   },
   "now": {
+    "env": {
+      "TELEGRAM_TOKEN": "@telegram-token"
+    },
     "scale": {
       "bru1": {
         "min": 1,
