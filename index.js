@@ -18,7 +18,7 @@ const mockifyText = text => text
     .map(mapToLowerCase)
     .reduce(mapCharArray)
 
-mockBot.onText(/\/(mock|auti)/, ({from, chat: { id: chatId }, reply_to_message: reply}) => {
+mockBot.onText(/\/(mock)/, ({from, chat: { id: chatId }, reply_to_message: reply}) => {
     if (typeof reply !== 'undefined') {
         const mockedText = mockifyText(reply.text)
         mockBot.sendMessage(chatId, mockedText)
