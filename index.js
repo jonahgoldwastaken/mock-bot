@@ -1,6 +1,7 @@
 process.env["NTBA_FIX_319"] = 1;
 const TelegramBot = require('node-telegram-bot-api')
 
+require('dotenv').config()
 const botToken = process.env.TELEGRAM_TOKEN
 const mockBot = new TelegramBot(botToken, {polling: true, filepath: false});
 
