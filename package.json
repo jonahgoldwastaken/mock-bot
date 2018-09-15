@@ -12,17 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/theonejonahgold/mock-bot.git"
   },
-  "now": {
-    "env": {
-      "TELEGRAM_TOKEN": "@telegram-token"
-    },
-    "scale": {
-      "bru1": {
-        "min": 1,
-        "max": 1
-      }
-    }
-  },
   "author": "Jonah Meijers <jonahmeijers97@gmail.com> (https://www.jonahmeijers.nl/)",
   "license": "MIT",
   "bugs": {
