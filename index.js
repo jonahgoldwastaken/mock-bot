@@ -3,14 +3,14 @@ const TelegramBot = require('node-telegram-bot-api')
 
 require('dotenv').config()
 const botToken = process.env.TELEGRAM_TOKEN
-const mockBot = new TelegramBot(botToken, {polling: true, filepath: false});
+const mockBot = new TelegramBot(botToken, {polling: true, filepath: false})
 
 const mapToLowerCase = val => val.toLowerCase()
 
 const mapCharArray = (total = '', val) => {
     if (!total.length) return val
     else if (total[total.length - 1] === total[total.length - 1].toUpperCase()) return total.concat(val)
-    else if (Math.random() < .7) return total.concat(val.toUpperCase())
+    else if (Math.random() < .8) return total.concat(val.toUpperCase())
     else return total.concat(val)
 }
 
