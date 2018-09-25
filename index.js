@@ -33,7 +33,7 @@ mockBot.on('inline_query', e => {
     const answer = [{
         type: 'article',
         id: String(Math.floor(Math.random() * 10000000000)),
-        title: mockifyText('Mocked text'),
+        title: mockifyText('KLIK HIER TRISTAN'),
         input_message_content: {
             message_text: mockedText,
             parse_mode: 'Markdown'
